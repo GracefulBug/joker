@@ -6,10 +6,22 @@ server:
 spring:
   application:
     name: joker
+
   servlet:
     multipart:
       enabled: true
       max-file-size: 10MB
+
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://123.56.142.9:3306/joker?useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true
+    username: root
+    password: pass
+
+  redis:
+    host: 123.56.142.9
+    password:
+
 
 
 # MinIO对象存储相关配置
@@ -26,3 +38,16 @@ joker:
     virtual-host: /  # rabbitmq的虚拟host
     username: mall   # rabbitmq的用户名
     password: mall   # rabbitmq的密码
+
+# mybatis-plus 配置
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0

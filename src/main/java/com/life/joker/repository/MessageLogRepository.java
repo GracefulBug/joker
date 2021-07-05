@@ -17,7 +17,11 @@ public class MessageLogRepository {
     @Resource
     private MessageLogMapper messageLogMapper;
 
-
+    /**
+     * 添加消息日志
+     *
+     * @param messageLog
+     */
     public void saveMessageLog(MessageLog messageLog) {
         messageLogMapper.insert(messageLog);
     }
