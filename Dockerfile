@@ -2,7 +2,7 @@ FROM frolvlad/alpine-oraclejdk8:slim
 
 
 
-ADD target/scav2-backend-0.0.1.jar app.jar
+ADD target/joker-0.0.1.jar app.jar
 RUN sh -c 'touch /app.jar' \
     && echo "Asia/Shanghai" > /etc/timezone
 ENV JAVA_OPTS=""
