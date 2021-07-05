@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
  * @description 消息枚举
  * @date 2021/7/1
  */
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public enum MessageEnum {
