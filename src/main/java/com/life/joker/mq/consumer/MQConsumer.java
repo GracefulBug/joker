@@ -52,11 +52,11 @@ public class MQConsumer {
         try {
             String strObject = new String(message.getBody(), "UTF-8");
             log.info("consumer2--消息接受成功！时间：【{}】，消息体--【{}】", LocalDateTime.now(), strObject);
-            if (StringUtils.isNoneBlank(strObject) && strObject.contains("dasda")) {
-                log.info("consumer2--消息接受成功！但不消费--重新入队");
-                channel.basicNack(message.getMessageProperties().getDeliveryTag(), true, true);
-                return;
-            }
+//            if (StringUtils.isNoneBlank(strObject) && strObject.contains("dasda")) {
+//                log.info("consumer2--消息接受成功！但不消费--重新入队");
+//                channel.basicNack(message.getMessageProperties().getDeliveryTag(), true, true);
+//                return;
+//            }
 
             try {
                 //设置消费者的 ack 模式为手动确认模式
